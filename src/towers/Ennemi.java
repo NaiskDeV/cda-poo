@@ -1,17 +1,36 @@
 package towers;
 
+import java.util.Scanner;
+
 public class Ennemi {
 	
 	float posX;
 	float posY;
 	int pv;
 	int rapidite;
+	public static int compteur=0;
 	
 	public Ennemi(int p, int r) {
 		this.posX = 0;
 		this.posY = 0;
 		this.pv = p;
 		this.rapidite = r;
+		compteur++;
+	}
+	
+	public static Ennemi creationEnnemi() {
+		Scanner clavier = new Scanner(System.in);
+		System.out.println("Création d'un ennemi");
+		System.out.println("Indiquez le nombre de pv : ");
+		int pv= clavier.nextInt();
+		
+		System.out.println("Indiquez la rapidité : ");
+		int rapidite = clavier.nextInt();
+		
+		Ennemi monEnnemi = new Ennemi(pv, rapidite);
+		clavier.close();
+		return monEnnemi;
+		
 	}
 	
 	public void recevoirDegats(int deg) {
@@ -40,7 +59,8 @@ public class Ennemi {
 	}
 	
 	public String toString() {
-		return this.pv;
+		return "PV : "+this.pv+", Rapidité : "+this.rapidite+", X: "+this.posX+", Y: "+this.posY;
 	}
+	
 	
 }
