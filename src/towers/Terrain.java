@@ -22,7 +22,11 @@ public class Terrain {
 		
 		System.out.println(grosMechant);
 		grosMechant.toString();
-
+		System.out.println(Ennemi.compteur);
+		
+		Ennemi nouvelEnnemi = Ennemi.creationEnnemi();
+		nouvelEnnemi.toString();
+		System.out.println(Ennemi.compteur);
 	}
 
 }
