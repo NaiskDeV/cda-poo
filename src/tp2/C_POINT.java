@@ -21,7 +21,7 @@ public class C_POINT extends C_POSITION {
 		nom = point.nom;
 	}
 	
-	public void affiche() {
+	public void aff() {
 		System.out.println(nom+"("+x+","+y+")");
 	}
 	
