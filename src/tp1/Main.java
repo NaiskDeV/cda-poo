@@ -1,4 +1,4 @@
-package tp1_poo;
+package tp1;
 
 import java.util.Scanner;
 

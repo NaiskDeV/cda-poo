@@ -1,4 +1,4 @@
-package tp4_poo;
+package tp4;
 
 //Classe abstraite - ne peut être instanciée
 abstract public class C_FIGURE {

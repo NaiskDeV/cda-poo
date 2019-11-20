@@ -1,4 +1,4 @@
-package tp5_poo;
+package tp5;
 
 
 class Service implements Payant {

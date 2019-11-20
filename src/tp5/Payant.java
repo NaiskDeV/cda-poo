@@ -1,4 +1,4 @@
-package tp5_poo;
+package tp5;
 
 public interface Payant {
 	 public float getPrix();

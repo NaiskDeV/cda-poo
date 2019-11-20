@@ -1,4 +1,4 @@
-package tp3_poo;
+package tp3;
 
 import java.util.Random;
 

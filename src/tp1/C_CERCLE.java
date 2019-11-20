@@ -1,4 +1,4 @@
-package tp1_poo;
+package tp1;
 
 public class C_CERCLE {
 	private float x, y, rayon;

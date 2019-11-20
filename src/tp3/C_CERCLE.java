@@ -1,4 +1,4 @@
-package tp3_poo;
+package tp3;
 
 public class C_CERCLE extends C_FIGURE {
 	

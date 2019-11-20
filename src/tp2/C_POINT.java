@@ -1,4 +1,4 @@
-package tp2_poo;
+package tp2;
 
 public class C_POINT extends C_POSITION {
 
