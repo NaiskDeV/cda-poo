@@ -2,6 +2,7 @@ package tp5;
 
 public class Main {
 	
+	
 	public static void main(String[] args) {
 		
 		//Exo1
@@ -28,6 +29,10 @@ public class Main {
 	    
 	    System.out.println("Somme des prix : "+somme);
 
+	    
+	    //Exo 2
+	    
+	
 	}
 	
 	
