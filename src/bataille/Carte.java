@@ -10,16 +10,16 @@ public class Carte {
 		this.couleur = couleur;
 	}
 	
-	public void superieurA() {
+	public void superieurA(Carte pCarte) {
 		
 	}
 	
-	public void memeValeur() {
+	public void memeValeur(Carte pCarte) {
 		
 	}
 	
 	public String toString() {
-		return "test";
+		return "La carte retournée est : "+this.valeur+" de "+this.couleur;
 	}
 	
 	}
