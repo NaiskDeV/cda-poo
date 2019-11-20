@@ -1,7 +1,7 @@
 package tp3;
 
-//Classe abstraite - ne peut être instanciée
-abstract public class C_FIGURE {
+
+public class C_FIGURE {
 	int x, y;
 	double surface;
 	
@@ -11,11 +11,13 @@ abstract public class C_FIGURE {
 	}
 	
 	public void affiche() {
-		System.out.println("Coordonnées : x= "+x+", y= "+y);
+		System.out.println("Coordonn�es : x= "+x+", y= "+y);
 	}
 	
 	
-	abstract double Aire();
+	public double Aire() {
+		return this.surface;
+	};
 	
 }
 
