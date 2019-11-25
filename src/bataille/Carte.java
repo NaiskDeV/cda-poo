@@ -1,8 +1,8 @@
 package bataille;
 
 public class Carte {
-	String valeur;
-	String couleur;
+	private String valeur;
+	private String couleur;
 	
 	
 	public Carte (String valeur, String couleur) {
@@ -19,7 +19,7 @@ public class Carte {
 	}
 	
 	public String toString() {
-		return "La carte retournée est : "+this.valeur+" de "+this.couleur;
+		return "La carte retournÃ©e est : "+this.valeur+" de "+this.couleur;
 	}
 	
 	}
