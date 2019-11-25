@@ -1,9 +1,9 @@
 package bataille;
 
 public class Joueur {
-	String nom;
-	Carte main;
-	Carte tapis;
+	private String nom;
+	private ArrayList <Carte> main;
+	private ArrayList <Carte> tapis;
 	
 	//Constructeur
 	public Joueur(String pNom, Carte pMain, Carte pTapis) {
