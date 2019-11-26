@@ -1,6 +1,7 @@
 package bataille;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Partie {
 	
@@ -23,7 +24,11 @@ public class Partie {
 		//Remplissage paquet
 		for (int i =0; i<valeurs.length; i++) {
 			for (int j=0; j<couleurs.length; i++) {
-				Carte carte = new Carte
+				Carte carte = new Carte();
+				carte.setValeur(valeurs[i]);
+				carte.setCouleur(couleurs[j]);
+				carte.setPower(power[i]);
+				paquet.add(carte);
 			}
 		}
 	}
@@ -37,6 +42,7 @@ public class Partie {
 	}
 
 	public void unTourDeJeu() {
+		Carte carte1 = joueur1.poserCarte();
 		
 	}
 
@@ -50,5 +56,20 @@ public class Partie {
 	
 	public void resolutionTour() {
 		
+	}
+	
+	public void distribuerCarte() {
+		//Mélange du paquet
+		Collections.shuffle(paquet);
+		
+		//Distribution de la première moitié du paquet à joueur1
+		for (int i =0; i<paquet.size()/2; i++) {
+			joueur1.ajouterCarte(paquet.get(i));
+		}
+		
+		//Distribution de la première moitié du paquet à joueur2
+		for (int j =paquet.size()/2; j<paquet.size()/2; j++) {
+			joueur2.ajouterCarte(paquet.get(j));
+		}
 	}
 }
