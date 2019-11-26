@@ -19,9 +19,11 @@ public class Partie {
 		String couleurs[] = {"Coeur", "Carreau", "Pique", "Trèfle"};
 		int power[] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
 		
+
+		//Remplissage paquet
 		for (int i =0; i<valeurs.length; i++) {
 			for (int j=0; j<couleurs.length; i++) {
-				
+				Carte carte = new Carte
 			}
 		}
 	}
