@@ -7,11 +7,14 @@ public class Tapis {
 		Joueur joueur1 = new Joueur("toto");
 		Joueur joueur2 = new Joueur("mimi");
 		
-		System.out.println(joueur1);
+		
 		
 		Partie partie1 = new Partie(joueur1, joueur2);
 		partie1.creerPaquet();
 		partie1.distribuerCarte();
+		
+		System.out.println(joueur1);
+		System.out.println(joueur2);
 	}
 
 }

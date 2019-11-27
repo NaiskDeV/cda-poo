@@ -66,7 +66,7 @@ public class Partie {
 		}
 		
 		//Distribution de la deuxième moitié du paquet à joueur2
-		for (int j=paquet.size()/2; j<paquet.size()/2; j++) {
+		for (int j=paquet.size()/2; j<paquet.size(); j++) {
 			joueur2.ajouterCarte(paquet.get(j));
 		}
 		

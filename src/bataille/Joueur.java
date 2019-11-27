@@ -68,7 +68,7 @@ public class Joueur {
 	}
 	
 	public String toString() {
-		return "Nom : "+this.nom;
+		return "Nom : "+this.nom+", main : "+this.main;
 	}
 	
 }
