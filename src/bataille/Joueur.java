@@ -11,10 +11,8 @@ public class Joueur {
 	private ArrayList <Carte> tapis;
 	
 	//Constructeur
-	public Joueur(String pNom, ArrayList <Carte> pMain, ArrayList <Carte> pTapis) {
+	public Joueur(String pNom) {
 		this.nom = pNom;
-		this.main = pMain;
-		this.tapis = pTapis;
 	}
 	
 	public boolean peutJouer() {
@@ -37,17 +35,17 @@ public class Joueur {
 		else return false;
 	}
 	
-	public void poserCarte() {
+	public void poserCarte(Carte pcarte) {
 		//La carte est retirée de main en pop front 
 		Carte carte = this.main.remove(0);
 		
 		//et ajoutée à tapis en push back
-		this.tapis.add(tapis.size()-1, carte);
+		this.tapis.add(pcarte);
 	}
 	
 	public void ajouterCarte(Carte pcarte) {
 		//ajouté à la main en push back
-		this.main.add(main.size()-1, pcarte);
+		this.main.add(pcarte);
 	}
 	
 	
@@ -60,7 +58,7 @@ public class Joueur {
 	
 	public void transferTapis(Joueur joueurGagnant) {
 		for (int i=0; i<this.tapis.size(); i++) {
-			joueurGagnant.main.add(main.size()-1, tapis.get(i));
+			joueurGagnant.ajouterCarte(this.tapis.get(i));
 		}
 		this.tapis.clear();
 	}

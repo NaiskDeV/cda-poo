@@ -18,17 +18,14 @@ public class Partie {
 	public void creerPaquet() {
 		String valeurs [] = {"2","3","4","5","6","7","8","9","10","Valet","Dame","Roi","As"};
 		String couleurs[] = {"Coeur", "Carreau", "Pique", "Trèfle"};
-		int power[] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
+		int powers[] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
 		
 
 		//Remplissage paquet
 		for (int i =0; i<valeurs.length; i++) {
 			for (int j=0; j<couleurs.length; i++) {
-				Carte carte = new Carte();
-				carte.setValeur(valeurs[i]);
-				carte.setCouleur(couleurs[j]);
-				carte.setPower(power[i]);
-				paquet.add(carte);
+				Carte carte = new Carte(valeurs[i], couleurs[j], powers[i]);
+				this.paquet.add(carte);
 			}
 		}
 	}
@@ -63,12 +60,12 @@ public class Partie {
 		Collections.shuffle(paquet);
 		
 		//Distribution de la première moitié du paquet à joueur1
-		for (int i =0; i<paquet.size()/2; i++) {
+		for (int i =0; i<this.paquet.size()/2; i++) {
 			joueur1.ajouterCarte(paquet.get(i));
 		}
 		
-		//Distribution de la première moitié du paquet à joueur2
-		for (int j =paquet.size()/2; j<paquet.size()/2; j++) {
+		//Distribution de la deuxième moitié du paquet à joueur2
+		for (int j=this.paquet.size()/2; j<this.paquet.size()/2; j++) {
 			joueur2.ajouterCarte(paquet.get(j));
 		}
 	}

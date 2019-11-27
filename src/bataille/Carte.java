@@ -6,17 +6,14 @@ public class Carte {
 	private int power;
 	
 	
-	public void setValeur (String valeur) {
+	public Carte(String valeur, String couleur, int power) {
 		this.valeur = valeur;
-	}
-	
-	public void setCouleur (String couleur) {
 		this.couleur = couleur;
+		this.power = power;	
 	}
 	
-	public void setPower (int power) {
-		this.power = power;
-	}
+
+
 	
 	public boolean superieurA(Carte pCarte) {
 		boolean flag = false;
