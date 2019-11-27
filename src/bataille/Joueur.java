@@ -13,6 +13,8 @@ public class Joueur {
 	//Constructeur
 	public Joueur(String pNom) {
 		this.nom = pNom;
+		this.main = new ArrayList<Carte>();
+		this.tapis = new ArrayList<Carte>();
 	}
 	
 	public boolean peutJouer() {
@@ -35,12 +37,14 @@ public class Joueur {
 		else return false;
 	}
 	
-	public void poserCarte(Carte pcarte) {
+	public Carte poserCarte() {
 		//La carte est retirée de main en pop front 
 		Carte carte = this.main.remove(0);
 		
 		//et ajoutée à tapis en push back
-		this.tapis.add(pcarte);
+		this.tapis.add(carte);
+		
+		return carte;
 	}
 	
 	public void ajouterCarte(Carte pcarte) {
@@ -62,4 +66,9 @@ public class Joueur {
 		}
 		this.tapis.clear();
 	}
+	
+	public String toString() {
+		return "Nom : "+this.nom;
+	}
+	
 }

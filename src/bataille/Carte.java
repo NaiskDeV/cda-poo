@@ -32,7 +32,7 @@ public class Carte {
 	}
 	
 	public String toString() {
-		return "La carte retournée est : "+this.valeur+" de "+this.couleur;
+		return this.valeur+" de "+this.couleur;
 	}
 	
 	}

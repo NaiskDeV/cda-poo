@@ -13,6 +13,7 @@ public class Partie {
 	public Partie (Joueur pJoueur1, Joueur pJoueur2) {
 		this.joueur1 = pJoueur1;
 		this.joueur2 = pJoueur2;
+		this.paquet = new ArrayList<Carte>();
 	}
 	
 	public void creerPaquet() {
@@ -23,7 +24,7 @@ public class Partie {
 
 		//Remplissage paquet
 		for (int i =0; i<valeurs.length; i++) {
-			for (int j=0; j<couleurs.length; i++) {
+			for (int j=0; j<couleurs.length; j++) {
 				Carte carte = new Carte(valeurs[i], couleurs[j], powers[i]);
 				this.paquet.add(carte);
 			}
@@ -58,15 +59,16 @@ public class Partie {
 	public void distribuerCarte() {
 		//Mélange du paquet
 		Collections.shuffle(paquet);
-		
+		System.out.println(paquet);
 		//Distribution de la première moitié du paquet à joueur1
-		for (int i =0; i<this.paquet.size()/2; i++) {
+		for (int i =0; i<paquet.size()/2; i++) {
 			joueur1.ajouterCarte(paquet.get(i));
 		}
 		
 		//Distribution de la deuxième moitié du paquet à joueur2
-		for (int j=this.paquet.size()/2; j<this.paquet.size()/2; j++) {
+		for (int j=paquet.size()/2; j<paquet.size()/2; j++) {
 			joueur2.ajouterCarte(paquet.get(j));
 		}
+		
 	}
 }
