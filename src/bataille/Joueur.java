@@ -17,8 +17,12 @@ public class Joueur {
 		this.tapis = new ArrayList<Carte>();
 	}
 	
+	public Joueur() {
+		
+	}
+	
 	public boolean peutJouer() {
-		if (this.main.size()>0) {
+		if (this.main.size()>10) {
 			return true;
 		}
 		else {
@@ -44,6 +48,7 @@ public class Joueur {
 		//et ajoutée à tapis en push back
 		this.tapis.add(carte);
 		
+		System.out.println(carte);
 		return carte;
 	}
 	
@@ -60,7 +65,7 @@ public class Joueur {
 		clavier.close();
 	}
 	
-	public void transferTapis(Joueur joueurGagnant) {
+	public void transfertTapis(Joueur joueurGagnant) {
 		for (int i=0; i<this.tapis.size(); i++) {
 			joueurGagnant.ajouterCarte(this.tapis.get(i));
 		}

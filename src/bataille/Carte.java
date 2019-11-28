@@ -31,6 +31,7 @@ public class Carte {
 		return flag;
 	}
 	
+		
 	public String toString() {
 		return this.valeur+" de "+this.couleur;
 	}

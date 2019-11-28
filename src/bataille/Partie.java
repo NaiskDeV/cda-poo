@@ -32,19 +32,39 @@ public class Partie {
 	}
 	
 	public void creerJeu() {
-		
+
 	}
 	
 	public void go() {
 		
 	}
 
-	public void unTourDeJeu() {
+	public Joueur unTourDeJeu() {
 		Carte carte1 = joueur1.poserCarte();
+		Carte carte2 = joueur2.poserCarte();
+		Joueur joueurGagnant = new Joueur();
 		
-	}
-
-	public void bataille() {
+		//Comparaison de la valeur des cartes posées
+		if (carte1.memeValeur(carte2)==false) {
+			//pas même valeur
+			
+			if (carte1.superieurA(carte2)==true) {
+				joueurGagnant = joueur1;
+			}
+			else {
+				joueurGagnant = joueur2;
+			}
+		
+			System.out.println("Gagnant : "+joueurGagnant);
+			return joueurGagnant;
+		}
+		else {
+			//même valeur
+			//joueur1.poserCarte();
+			//joueur2.poserCarte();
+			return this.unTourDeJeu();
+		}
+		
 		
 	}
 
@@ -70,5 +90,7 @@ public class Partie {
 			joueur2.ajouterCarte(paquet.get(j));
 		}
 		
+		System.out.println(joueur1);
+		System.out.println(joueur2);
 	}
 }
