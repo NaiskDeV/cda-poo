@@ -12,9 +12,6 @@ public class Carte {
 		this.power = power;	
 	}
 	
-
-
-	
 	public boolean superieurA(Carte pCarte) {
 		boolean flag = false;
 		if (this.power > pCarte.power) {

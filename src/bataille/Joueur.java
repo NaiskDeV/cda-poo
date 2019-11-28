@@ -1,9 +1,6 @@
 package bataille;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-
-
 
 public class Joueur {
 	private String nom;
@@ -21,8 +18,9 @@ public class Joueur {
 		
 	}
 	
+	//La main est-elle vide?
 	public boolean peutJouer() {
-		if (this.main.size()>10) {
+		if (this.main.size()>0) {
 			return true;
 		}
 		else {
@@ -30,17 +28,16 @@ public class Joueur {
 		}
 	}
 	
-	public void derniereCartePosee() {
-		
-	}
-	
-	public boolean gagner(){
-		if (this.main.size()==52) {
-			return true;
+	//Message de fin
+	public void gagner(){
+		if (this.main.size()!=0) {
+			String msg = "Félicitation à "+this.nom+"!";
+			System.out.println(msg);
 		}
-		else return false;
+
 	}
 	
+	//Poser 1 carte de la main vers le tapis
 	public Carte poserCarte() {
 		//La carte est retirée de main en pop front 
 		Carte carte = this.main.remove(0);
@@ -57,19 +54,13 @@ public class Joueur {
 		this.main.add(pcarte);
 	}
 	
-	
-	public void setNom() {
-		Scanner clavier = new Scanner (System.in);
-		System.out.println("Quel est le nom du joueur?");
-		this.nom = clavier.nextLine();
-		clavier.close();
-	}
-	
+
 	public void transfertTapis(Joueur joueurGagnant) {
-		for (int i=0; i<this.tapis.size(); i++) {
+		for (int i=this.tapis.size()-1; i>=0; i--) {
 			joueurGagnant.ajouterCarte(this.tapis.get(i));
 		}
 		this.tapis.clear();
+		System.out.println(this.nom+" "+this.main.size()+" "+this.main);
 	}
 	
 	public String toString() {

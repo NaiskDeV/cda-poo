@@ -36,18 +36,36 @@ public class Partie {
 	}
 	
 	public void go() {
+		int compteur = 0;
 		
+		while(joueur1.peutJouer()==true && joueur2.peutJouer()==true) {
+			Joueur joueurGagnant = this.unTourDeJeu();
+			if (joueurGagnant!=null)
+			{
+				if (joueurGagnant==joueur1)
+				{
+					joueur1.transfertTapis(joueurGagnant);
+					joueur2.transfertTapis(joueurGagnant);
+				}
+				else
+				{
+					joueur2.transfertTapis(joueurGagnant);
+					joueur1.transfertTapis(joueurGagnant);
+				}
+			}
+			compteur++;
+		}
+		System.out.println("Partie terminée en "+compteur+" tours.");
 	}
 
 	public Joueur unTourDeJeu() {
 		Carte carte1 = joueur1.poserCarte();
 		Carte carte2 = joueur2.poserCarte();
-		Joueur joueurGagnant = new Joueur();
+		Joueur joueurGagnant = null;
 		
 		//Comparaison de la valeur des cartes posées
 		if (carte1.memeValeur(carte2)==false) {
 			//pas même valeur
-			
 			if (carte1.superieurA(carte2)==true) {
 				joueurGagnant = joueur1;
 			}
@@ -58,28 +76,36 @@ public class Partie {
 			System.out.println("Gagnant : "+joueurGagnant);
 			return joueurGagnant;
 		}
-		else {
-			//même valeur
-			//joueur1.poserCarte();
-			//joueur2.poserCarte();
-			return this.unTourDeJeu();
+		else if (joueur1.peutJouer() && joueur2.peutJouer()){
+			//même valeur	
+			joueur1.poserCarte();
+			joueur2.poserCarte();
+			if (joueur1.peutJouer() && joueur2.peutJouer()) {
+				return this.unTourDeJeu();
+			}
+			else if (joueur1.peutJouer() && !joueur2.peutJouer()) {
+				joueurGagnant = joueur1;
+			}
+			else if (!joueur1.peutJouer() && joueur2.peutJouer()) {
+				joueurGagnant = joueur2;
+			}
+		}
+		else if (joueur1.peutJouer() && !joueur2.peutJouer())
+		{
+			return joueur1;
+		}
+		else if (!joueur1.peutJouer() && joueur2.peutJouer())
+		{
+			return joueur2;
 		}
 		
-		
+		return null;
 	}
 
-	public void etatBataille() {
-		
-	}
-	
-	public void resolutionTour() {
-		
-	}
 	
 	public void distribuerCarte() {
 		//Mélange du paquet
 		Collections.shuffle(paquet);
-		System.out.println(paquet);
 		//Distribution de la première moitié du paquet à joueur1
 		for (int i =0; i<paquet.size()/2; i++) {
 			joueur1.ajouterCarte(paquet.get(i));
